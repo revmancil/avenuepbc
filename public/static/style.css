@@ -1,1 +1,197 @@
-h1 { font-family: Arial, Helvetica, sans-serif; }
+/* ============================================================
+   THE AVENUE — Avenue Progressive Baptist Church
+   Custom Styles
+   ============================================================ */
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0f1a2e; }
+::-webkit-scrollbar-thumb { background: #c9a84c; border-radius: 3px; }
+
+/* ── Scroll Behavior ─────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── Fade-in Animation ───────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in.delay-1 { transition-delay: 0.1s; }
+.fade-in.delay-2 { transition-delay: 0.2s; }
+.fade-in.delay-3 { transition-delay: 0.3s; }
+.fade-in.delay-4 { transition-delay: 0.4s; }
+
+/* ── Hero ────────────────────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(15,26,46,0.82) 0%,
+    rgba(26,39,68,0.70) 50%,
+    rgba(15,26,46,0.55) 100%
+  );
+}
+
+/* ── Section divider ─────────────────────────────────────── */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c9a84c, #e8dcc8);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem;
+}
+.section-divider.left { margin-left: 0; }
+
+/* ── Gold gradient text ───────────────────────────────────── */
+.gold-text {
+  background: linear-gradient(135deg, #c9a84c, #e8c86a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Card hover ──────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ── Service time card ───────────────────────────────────── */
+.time-card {
+  background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 100%);
+  border: 1px solid rgba(201,168,76,0.25);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.time-card:hover {
+  border-color: rgba(201,168,76,0.7);
+  transform: translateY(-3px);
+}
+
+/* ── Ministry card ───────────────────────────────────────── */
+.ministry-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.ministry-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,26,46,0.9) 0%, rgba(15,26,46,0.3) 60%, transparent 100%);
+  transition: opacity 0.3s ease;
+}
+.ministry-card:hover::after {
+  opacity: 0.85;
+}
+.ministry-card img {
+  transition: transform 0.5s ease;
+}
+.ministry-card:hover img {
+  transform: scale(1.08);
+}
+
+/* ── Quote pull ──────────────────────────────────────────── */
+.pull-quote {
+  border-left: 4px solid #c9a84c;
+  padding-left: 1.5rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ── Stats strip ─────────────────────────────────────────── */
+.stats-strip {
+  background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 100%);
+}
+
+/* ── Form ────────────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  background: white;
+}
+.form-input:focus {
+  border-color: #c9a84c;
+  box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+.breadcrumb-hero {
+  background: linear-gradient(135deg, #1a2744 0%, #0f1a2e 100%);
+  position: relative;
+  overflow: hidden;
+}
+.breadcrumb-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
+}
+
+/* ── Event card ──────────────────────────────────────────── */
+.event-card {
+  border-left: 4px solid #c9a84c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card:hover {
+  transform: translateX(4px);
+  box-shadow: 4px 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── Nav active ──────────────────────────────────────────── */
+.nav-scrolled .nav-link {
+  color: white;
+}
+
+/* ── Video container ─────────────────────────────────────── */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+}
+
+/* ── Sermon card ─────────────────────────────────────────── */
+.sermon-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #f3f4f6;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.sermon-card:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+/* ── Number counter animation ────────────────────────────── */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-num { animation: countUp 0.6s ease forwards; }
+
+/* ── Responsive images ───────────────────────────────────── */
+img { max-width: 100%; height: auto; }
