@@ -1,5 +1,6 @@
 import type { Context } from 'hono'
 import { PageHero } from './shared'
+import { PHOTOS } from '../renderer'
 
 export const historyPage = (c: Context) => c.render(
   <div>
@@ -7,6 +8,7 @@ export const historyPage = (c: Context) => c.render(
       title="Our History"
       subtitle="Over 60 years of faith, community, and God's faithfulness in South Dallas."
       breadcrumb="Our History"
+      bgPhoto={PHOTOS.congregation1}
     />
 
     {/* Timeline section */}
@@ -16,14 +18,30 @@ export const historyPage = (c: Context) => c.render(
         {/* Opening */}
         <div class="text-center mb-16 fade-in">
           <div class="section-divider"></div>
-          <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-4">
             A Way to Christ
           </h2>
           <p class="text-gray-600 text-lg leading-relaxed max-w-2xl mx-auto">
-            The name "Avenue Baptist Church" was inspired by the intersection of Grand Avenue
-            and Oakland Avenue — symbolizing <em class="text-brand-gold font-semibold">"A Way to Christ."</em> For over
+            The name &quot;Avenue Baptist Church&quot; was inspired by the intersection of Grand Avenue
+            and Oakland Avenue &mdash; symbolizing <em class="text-brand-gold font-semibold">&ldquo;A Way to Christ.&rdquo;</em> For over
             six decades, that vision has guided everything we do.
           </p>
+        </div>
+
+        {/* Photo accent */}
+        <div class="mb-16 fade-in">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl h-64 md:h-80">
+            <img
+              src={PHOTOS.congregation3}
+              alt="Avenue Progressive Baptist Church congregation"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+            <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 30%, rgba(107,26,42,0.85) 100%);"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
+              <p class="font-serif italic text-lg">&ldquo;A community of faith, rooted in South Dallas since 1961&rdquo;</p>
+            </div>
+          </div>
         </div>
 
         {/* Timeline */}
@@ -75,8 +93,8 @@ export const historyPage = (c: Context) => c.render(
                   <>
                     <div class="flex-1 md:text-right">
                       <div class="bg-white rounded-2xl p-6 shadow-md card-hover">
-                        <span class="inline-block bg-brand-navy text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">{item.year}</span>
-                        <h3 class="font-serif font-bold text-brand-navy text-xl mb-2">{item.title}</h3>
+                        <span class="inline-block bg-brand-maroon text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">{item.year}</span>
+                        <h3 class="font-serif font-bold text-brand-maroon text-xl mb-2">{item.title}</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">{item.text}</p>
                       </div>
                     </div>
@@ -93,8 +111,8 @@ export const historyPage = (c: Context) => c.render(
                     </div>
                     <div class="flex-1">
                       <div class="bg-white rounded-2xl p-6 shadow-md card-hover">
-                        <span class="inline-block bg-brand-navy text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">{item.year}</span>
-                        <h3 class="font-serif font-bold text-brand-navy text-xl mb-2">{item.title}</h3>
+                        <span class="inline-block bg-brand-maroon text-brand-gold text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wide">{item.year}</span>
+                        <h3 class="font-serif font-bold text-brand-maroon text-xl mb-2">{item.title}</h3>
                         <p class="text-gray-600 text-sm leading-relaxed">{item.text}</p>
                       </div>
                     </div>
@@ -107,12 +125,30 @@ export const historyPage = (c: Context) => c.render(
       </div>
     </section>
 
+    {/* Photo strip — congregation photos */}
+    <section class="py-0">
+      <div class="grid grid-cols-3 h-64">
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.ushers} alt="Church members" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-maroon/20"></div>
+        </div>
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.worshipPraise} alt="Congregation worshipping" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-charcoal/20"></div>
+        </div>
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.womenGroup} alt="Church congregation" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-maroon/20"></div>
+        </div>
+      </div>
+    </section>
+
     {/* CTA */}
     <section class="py-20 stats-strip text-center fade-in">
       <div class="max-w-2xl mx-auto px-4">
         <h2 class="font-serif text-3xl font-bold text-white mb-4">Become Part of Our Story</h2>
         <p class="text-gray-300 mb-8">Join us this Sunday and write the next chapter with us.</p>
-        <a href="/visit" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-yellow-500 text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-xl">
+        <a href="/visit" class="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-gold2 text-white font-semibold px-8 py-4 rounded-full transition-colors shadow-xl">
           Plan Your Visit <i class="fas fa-arrow-right"></i>
         </a>
       </div>

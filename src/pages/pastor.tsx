@@ -1,7 +1,6 @@
 import type { Context } from 'hono'
 import { PageHero } from './shared'
-
-const pastorImg = "https://sspark.genspark.ai/cfimages?u1=DIe6ySYitvYvw%2Bcf6P6EaBXhSzNnmBXa5NZyMHxbkVdwnaKS9x8gD%2FJIDXn%2Bas1lNZ9dEQhmsgdFV1kY1XC1WDp6z6CxmQ%3D%3D&u2=xngxgdfFljGrYEtQ&width=1024"
+import { PHOTOS } from '../renderer'
 
 export const pastorPage = (c: Context) => c.render(
   <div>
@@ -9,6 +8,7 @@ export const pastorPage = (c: Context) => c.render(
       title="Our Pastor"
       subtitle="Meet Dr. Mancil Carroll III, Senior Pastor of THE AVENUE."
       breadcrumb="Our Pastor"
+      bgPhoto={PHOTOS.installation}
     />
 
     <section class="py-24 bg-brand-cream">
@@ -18,15 +18,15 @@ export const pastorPage = (c: Context) => c.render(
           <div class="lg:col-span-2 fade-in">
             <div class="relative">
               <img
-                src={pastorImg}
-                alt="Dr. Mancil Carroll III, Senior Pastor of Avenue Progressive Baptist Church"
+                src={PHOTOS.couple}
+                alt="Dr. Mancil Carroll III, Senior Pastor of Avenue Progressive Baptist Church, with First Lady"
                 class="w-full rounded-3xl shadow-2xl"
                 loading="lazy"
               />
               {/* Name badge */}
-              <div class="absolute bottom-0 left-0 right-0 bg-brand-navy/90 backdrop-blur-sm text-white p-5 rounded-b-3xl">
+              <div class="absolute bottom-0 left-0 right-0 bg-brand-charcoal/92 backdrop-blur-sm text-white p-5 rounded-b-3xl">
                 <div class="font-serif font-bold text-xl">Dr. Mancil Carroll III</div>
-                <div class="text-brand-gold text-sm mt-0.5">Senior Pastor · Elected May 2025</div>
+                <div class="text-brand-gold text-sm mt-0.5">Senior Pastor &amp; First Lady &middot; Elected May 2025</div>
               </div>
             </div>
 
@@ -38,27 +38,37 @@ export const pastorPage = (c: Context) => c.render(
                 </div>
                 <div>
                   <div class="text-xs text-gray-400 font-medium uppercase tracking-wide">Author</div>
-                  <div class="font-serif font-bold text-brand-navy">Holy, But Not Perfect</div>
+                  <div class="font-serif font-bold text-brand-maroon">Holy, But Not Perfect</div>
                 </div>
               </div>
               <p class="text-gray-500 text-sm leading-relaxed">
-                A powerful testimony of redemption and grace, reminding believers that God's call
+                A powerful testimony of redemption and grace, reminding believers that God&apos;s call
                 is never revoked and His love never fails.
               </p>
+            </div>
+
+            {/* Congregation photo */}
+            <div class="mt-6 rounded-2xl overflow-hidden shadow-md">
+              <img
+                src={PHOTOS.congregation2}
+                alt="Avenue congregation in worship"
+                class="w-full h-48 object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
 
           {/* Bio column */}
           <div class="lg:col-span-3 fade-in delay-2">
             <div class="section-divider left"></div>
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-6">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-6">
               Shepherd of THE AVENUE
             </h2>
 
             <blockquote class="pull-quote mb-8">
-              "THE AVENUE is more than a church — it is a family. Here you will find a people
+              &ldquo;THE AVENUE is more than a church &mdash; it is a family. Here you will find a people
               committed to walking with you in faith, praying alongside you, and helping you
-              discover the abundant life that Jesus offers."
+              discover the abundant life that Jesus offers.&rdquo;
             </blockquote>
 
             <div class="space-y-5 text-gray-600 leading-relaxed">
@@ -69,20 +79,20 @@ export const pastorPage = (c: Context) => c.render(
                 conviction, while building bridges between the church and the community.
               </p>
               <p>
-                Pastor Carroll brings over <strong class="text-brand-navy">20 years of ministry experience</strong> to
+                Pastor Carroll brings over <strong class="text-brand-maroon">20 years of ministry experience</strong> to
                 THE AVENUE. Elected in May 2025, he arrived with a proven track record of equipping
                 congregations, mentoring young leaders, and guiding families to live with purpose and faith.
               </p>
               <p>
-                He is the author of <em class="text-brand-gold font-semibold">Holy, But Not Perfect</em> — a powerful
+                He is the author of <em class="text-brand-gold font-semibold">Holy, But Not Perfect</em> &mdash; a powerful
                 testimony of redemption and grace. His heart for people extends beyond the pulpit
                 as he is committed to uplifting the South Dallas community through outreach,
                 service, and love.
               </p>
               <p>
-                Dr. Carroll has been joyfully married for 26 years to <strong class="text-brand-navy">Maxine Carroll</strong>,
+                Dr. Carroll has been joyfully married for 26 years to <strong class="text-brand-maroon">Maxine Carroll</strong>,
                 and together they are the proud parents of three adult children: Jasmine, Paris, and Metia.
-                His love for family shapes his approach to ministry — the church should be both a
+                His love for family shapes his approach to ministry &mdash; the church should be both a
                 spiritual home and a family that welcomes all.
               </p>
             </div>
@@ -97,11 +107,11 @@ export const pastorPage = (c: Context) => c.render(
               ].map((h, i) => (
                 <div key={i} class={`bg-white rounded-xl p-4 shadow-sm fade-in delay-${i + 1}`}>
                   <div class="flex items-center gap-3">
-                    <div class="w-9 h-9 bg-brand-navy/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <i class={`fas ${h.icon} text-brand-navy text-sm`}></i>
+                    <div class="w-9 h-9 bg-brand-maroon/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <i class={`fas ${h.icon} text-brand-maroon text-sm`}></i>
                     </div>
                     <div>
-                      <div class="font-semibold text-brand-navy text-sm">{h.label}</div>
+                      <div class="font-semibold text-brand-maroon text-sm">{h.label}</div>
                       <div class="text-gray-400 text-xs">{h.sub}</div>
                     </div>
                   </div>
@@ -110,15 +120,26 @@ export const pastorPage = (c: Context) => c.render(
             </div>
 
             <div class="mt-10 flex flex-wrap gap-4">
-              <a href="/visit" class="inline-flex items-center gap-2 bg-brand-navy hover:bg-brand-dark text-white font-semibold px-6 py-3 rounded-full transition-colors">
+              <a href="/visit" class="inline-flex items-center gap-2 bg-brand-maroon hover:bg-brand-maroon2 text-white font-semibold px-6 py-3 rounded-full transition-colors">
                 <i class="fas fa-church"></i> Join Us Sunday
               </a>
-              <a href="/contact" class="inline-flex items-center gap-2 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white font-semibold px-6 py-3 rounded-full transition-colors">
+              <a href="/contact" class="inline-flex items-center gap-2 border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 rounded-full transition-colors">
                 Contact the Church
               </a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    {/* Full-width congregation photo strip */}
+    <section class="relative h-72 overflow-hidden">
+      <img src={PHOTOS.congregation6} alt="THE AVENUE congregation" class="w-full h-full object-cover" loading="lazy" />
+      <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(107,26,42,0.75) 0%, rgba(17,17,17,0.55) 100%);"></div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <p class="font-serif text-white text-2xl md:text-3xl italic text-center px-8 drop-shadow-lg">
+          &ldquo;A pastor after God&apos;s own heart, serving a congregation full of faith.&rdquo;
+        </p>
       </div>
     </section>
   </div>,

@@ -1,5 +1,6 @@
 import type { Context } from 'hono'
 import { PageHero } from './shared'
+import { PHOTOS } from '../renderer'
 
 export const visitPage = (c: Context) => c.render(
   <div>
@@ -7,6 +8,7 @@ export const visitPage = (c: Context) => c.render(
       title="Plan Your Visit"
       subtitle="We're so glad you're thinking about visiting THE AVENUE. Here's everything you need to know."
       breadcrumb="Plan a Visit"
+      bgPhoto={PHOTOS.greeters}
     />
 
     <section class="py-24 bg-brand-cream">
@@ -16,7 +18,7 @@ export const visitPage = (c: Context) => c.render(
           {/* Left: Info */}
           <div class="fade-in">
             <div class="section-divider left"></div>
-            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-navy mb-8">
+            <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-8">
               What to Expect
             </h2>
 
@@ -26,24 +28,33 @@ export const visitPage = (c: Context) => c.render(
                   <ul class="text-gray-600 text-sm space-y-1 mt-1">
                     <li><i class="fas fa-check text-brand-gold mr-2 text-xs"></i>Sunday School: <strong>10:00 AM</strong></li>
                     <li><i class="fas fa-check text-brand-gold mr-2 text-xs"></i>Sunday Worship: <strong>11:15 AM</strong> (~90 minutes)</li>
-                    <li><i class="fas fa-check text-brand-gold mr-2 text-xs"></i>Wednesday Prayer & Bible Study: <strong>6:30 PM</strong></li>
+                    <li><i class="fas fa-check text-brand-gold mr-2 text-xs"></i>Wednesday Prayer &amp; Bible Study: <strong>6:30 PM</strong></li>
                   </ul>
                 )},
-                { icon: 'fa-tshirt', title: 'What Should I Wear?', content: <p class="text-gray-600 text-sm mt-1">Come as you are! Some dress formally, others casually. What matters is that you're here.</p> },
+                { icon: 'fa-tshirt', title: 'What Should I Wear?', content: <p class="text-gray-600 text-sm mt-1">Come as you are! Some dress formally, others casually. What matters is that you&apos;re here.</p> },
                 { icon: 'fa-parking', title: 'Parking', content: <p class="text-gray-600 text-sm mt-1">Free parking is available in the church lot and along surrounding streets.</p> },
                 { icon: 'fa-child', title: 'Children & Youth', content: <p class="text-gray-600 text-sm mt-1">Children are welcome in the sanctuary. Sunday School classes are available for all age groups at 10:00 AM.</p> },
                 { icon: 'fa-accessible-icon', title: 'Accessibility', content: <p class="text-gray-600 text-sm mt-1">Our building is accessible. If you have specific needs, please contact us ahead of your visit.</p> },
               ].map((item, i) => (
                 <div key={i} class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm">
-                  <div class="w-11 h-11 bg-brand-navy rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div class="w-11 h-11 bg-brand-maroon rounded-xl flex items-center justify-center flex-shrink-0">
                     <i class={`fas ${item.icon} text-brand-gold`}></i>
                   </div>
                   <div class="flex-1">
-                    <h3 class="font-semibold text-brand-navy text-base">{item.title}</h3>
+                    <h3 class="font-semibold text-brand-maroon text-base">{item.title}</h3>
                     {item.content}
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Congregation photo */}
+            <div class="mt-8 rounded-2xl overflow-hidden shadow-lg relative h-52">
+              <img src={PHOTOS.congregation5} alt="THE AVENUE congregation welcomes you" class="w-full h-full object-cover" loading="lazy" />
+              <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(107,26,42,0.75) 100%);"></div>
+              <div class="absolute bottom-0 left-0 p-5 text-white">
+                <p class="font-serif italic text-lg">&ldquo;All are welcome at THE AVENUE.&rdquo;</p>
+              </div>
             </div>
           </div>
 
@@ -66,11 +77,11 @@ export const visitPage = (c: Context) => c.render(
               </div>
               <div class="p-5">
                 <div class="flex items-start gap-4">
-                  <div class="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div class="w-10 h-10 bg-brand-maroon rounded-lg flex items-center justify-center flex-shrink-0">
                     <i class="fas fa-map-marker-alt text-brand-gold"></i>
                   </div>
                   <div class="flex-1">
-                    <div class="font-bold text-brand-navy">3745 Dildock Street</div>
+                    <div class="font-bold text-brand-maroon">3745 Dildock Street</div>
                     <div class="text-gray-500 text-sm">Dallas, TX 75215</div>
                     <div class="text-gray-400 text-xs mt-1">Heart of South Dallas</div>
                   </div>
@@ -78,7 +89,7 @@ export const visitPage = (c: Context) => c.render(
                     href="https://www.google.com/maps/search/?api=1&query=3745+Dildock+Street+Dallas+TX+75215"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1 bg-brand-gold hover:bg-yellow-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors"
+                    class="inline-flex items-center gap-1 bg-brand-gold hover:bg-brand-gold2 text-white text-xs font-semibold px-4 py-2 rounded-full transition-colors"
                   >
                     <i class="fas fa-directions"></i> Directions
                   </a>
@@ -88,9 +99,9 @@ export const visitPage = (c: Context) => c.render(
 
             {/* First-Time Guest Form */}
             <div class="bg-white rounded-3xl p-7 shadow-xl">
-              <h3 class="font-serif text-2xl font-bold text-brand-navy mb-2">Let Us Know You're Coming</h3>
+              <h3 class="font-serif text-2xl font-bold text-brand-maroon mb-2">Let Us Know You&apos;re Coming</h3>
               <p class="text-gray-500 text-sm mb-6">
-                Optional — we'll welcome you by name on Sunday!
+                Optional &mdash; we&apos;ll welcome you by name on Sunday!
               </p>
               <form id="visit-form" class="space-y-4">
                 <div class="grid grid-cols-2 gap-4">
@@ -112,9 +123,9 @@ export const visitPage = (c: Context) => c.render(
                   <input type="tel" id="v-phone" name="phone" placeholder="(214) 000-0000" class="form-input" />
                 </div>
                 <div>
-                  <label for="v-group" class="block text-sm font-medium text-gray-700 mb-1">Who's coming with you?</label>
+                  <label for="v-group" class="block text-sm font-medium text-gray-700 mb-1">Who&apos;s coming with you?</label>
                   <select id="v-group" name="group" class="form-input">
-                    <option value="">Select…</option>
+                    <option value="">Select&hellip;</option>
                     <option>Just me</option>
                     <option>Me + a guest</option>
                     <option>Family with children</option>
@@ -126,11 +137,11 @@ export const visitPage = (c: Context) => c.render(
                   <textarea id="v-notes" name="notes" rows={3} placeholder="Questions, accessibility needs, etc." class="form-input resize-none"></textarea>
                 </div>
                 <button type="submit" id="v-submit"
-                  class="w-full bg-brand-gold hover:bg-yellow-600 text-white font-semibold py-3 rounded-full transition-colors shadow-md">
-                  <i class="fas fa-check mr-1"></i> I'm Planning to Visit!
+                  class="w-full bg-brand-maroon hover:bg-brand-maroon2 text-white font-semibold py-3 rounded-full transition-colors shadow-md">
+                  <i class="fas fa-check mr-1"></i> I&apos;m Planning to Visit!
                 </button>
                 <div id="v-success" class="hidden text-center text-green-700 bg-green-50 border border-green-200 rounded-xl py-3 text-sm font-medium">
-                  <i class="fas fa-check-circle mr-1"></i> Great! We'll look for you this Sunday. See you soon!
+                  <i class="fas fa-check-circle mr-1"></i> Great! We&apos;ll look for you this Sunday. See you soon!
                 </div>
               </form>
             </div>
@@ -144,7 +155,7 @@ export const visitPage = (c: Context) => c.render(
         e.preventDefault();
         const btn = document.getElementById('v-submit');
         btn.disabled = true;
-        btn.textContent = 'Saving…';
+        btn.textContent = 'Saving\u2026';
         try {
           const fd = new FormData(this);
           await fetch('/contact', { method: 'POST', body: fd });
@@ -152,7 +163,7 @@ export const visitPage = (c: Context) => c.render(
           this.reset();
         } catch(err) {}
         btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-check mr-1"></i> I\'m Planning to Visit!';
+        btn.innerHTML = '<i class="fas fa-check mr-1"></i> I\\'m Planning to Visit!';
       });
     ` }} />
   </div>,
