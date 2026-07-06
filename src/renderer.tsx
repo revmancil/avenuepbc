@@ -34,6 +34,10 @@ export const PHOTOS = {
   ushers:         'https://www.genspark.ai/api/files/s/FGuzqfBv',
   // Hospitality greeters
   greeters:       'https://www.genspark.ai/api/files/s/JxiMgIPW',
+  // Pastor Carroll — headshot (glasses, gold bowtie)
+  pastorHeadshot: 'https://www.genspark.ai/api/files/s/Q2nYiCWX',
+  // Pastor Carroll — in doctoral robes at pulpit
+  pastorRobes:    'https://www.genspark.ai/api/files/s/lS4KP1Ox',
   // Logo
   logo:           '/static/logo.png',
 }

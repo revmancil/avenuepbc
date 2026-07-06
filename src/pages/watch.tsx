@@ -37,6 +37,17 @@ export const watchPage = (c: Context) => c.render(
             <div class="lg:col-span-2 fade-in delay-2">
               <div class="section-divider left"></div>
               <h2 class="font-serif text-3xl font-bold text-brand-maroon mb-4">Watch Live</h2>
+              <div class="flex items-center gap-3 mb-5 bg-white rounded-xl px-4 py-3 shadow-sm">
+                <img
+                  src={PHOTOS.pastorHeadshot}
+                  alt="Dr. Mancil Carroll III"
+                  class="w-12 h-12 rounded-full object-cover object-top border-2 border-brand-gold flex-shrink-0"
+                />
+                <div>
+                  <div class="font-semibold text-brand-maroon text-sm">Dr. Mancil Carroll III</div>
+                  <div class="text-gray-400 text-xs">Senior Pastor · Expository Preaching</div>
+                </div>
+              </div>
               <p class="text-gray-600 leading-relaxed mb-6">
                 Can&apos;t make it in person? Join us online for live worship, sermons, and encouragement.
                 We stream Sunday worship live and archive messages on YouTube.
@@ -91,7 +102,14 @@ export const watchPage = (c: Context) => c.render(
         <div class="mb-16 fade-in">
           <div class="text-center mb-10">
             <h2 class="font-serif text-3xl font-bold text-brand-maroon mb-3">Recent Messages</h2>
-            <p class="text-gray-500">Catch up on recent sermons from Pastor Carroll.</p>
+            <div class="flex items-center justify-center gap-3 mt-2">
+              <img
+                src={PHOTOS.pastorHeadshot}
+                alt="Dr. Mancil Carroll III"
+                class="w-10 h-10 rounded-full object-cover object-top border-2 border-brand-gold shadow"
+              />
+              <p class="text-gray-500">Catch up on recent sermons from Dr. Carroll.</p>
+            </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

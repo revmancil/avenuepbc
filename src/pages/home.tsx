@@ -192,11 +192,11 @@ export const homePage = (c: Context) => {
         <div class="absolute right-0 top-0 w-96 h-96 bg-brand-maroon/10 rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* real congregation/couple photo for pastor section */}
+            {/* Real pastor headshot */}
             <div class="relative photo-frame fade-in">
               <img
-                src={PHOTOS.friendsGroup}
-                alt="Dr. Mancil Carroll III, Senior Pastor of THE AVENUE, with congregation"
+                src={PHOTOS.pastorHeadshot}
+                alt="Dr. Mancil Carroll III, Senior Pastor of Avenue Progressive Baptist Church"
                 class="relative w-full h-[460px] object-cover object-top rounded-3xl shadow-2xl z-10"
                 loading="lazy"
               />

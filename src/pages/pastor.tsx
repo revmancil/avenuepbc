@@ -4,29 +4,50 @@ import { PHOTOS } from '../renderer'
 
 export const pastorPage = (c: Context) => c.render(
   <div>
+    {/* Hero uses pastor in robes as background */}
     <PageHero
       title="Our Pastor"
       subtitle="Meet Dr. Mancil Carroll III, Senior Pastor of THE AVENUE."
       breadcrumb="Our Pastor"
-      bgPhoto={PHOTOS.installation}
+      bgPhoto={PHOTOS.pastorRobes}
     />
 
     <section class="py-24 bg-brand-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-16 items-start">
-          {/* Photo column */}
+
+          {/* ── Photo column ── */}
           <div class="lg:col-span-2 fade-in">
+
+            {/* Primary portrait — headshot */}
             <div class="relative">
               <img
-                src={PHOTOS.couple}
-                alt="Dr. Mancil Carroll III, Senior Pastor of Avenue Progressive Baptist Church, with First Lady"
-                class="w-full rounded-3xl shadow-2xl"
-                loading="lazy"
+                src={PHOTOS.pastorHeadshot}
+                alt="Dr. Mancil Carroll III, Senior Pastor of Avenue Progressive Baptist Church"
+                class="w-full rounded-3xl shadow-2xl object-cover"
+                loading="eager"
               />
               {/* Name badge */}
               <div class="absolute bottom-0 left-0 right-0 bg-brand-charcoal/92 backdrop-blur-sm text-white p-5 rounded-b-3xl">
                 <div class="font-serif font-bold text-xl">Dr. Mancil Carroll III</div>
-                <div class="text-brand-gold text-sm mt-0.5">Senior Pastor &amp; First Lady &middot; Elected May 2025</div>
+                <div class="text-brand-gold text-sm mt-0.5">Senior Pastor &middot; Elected May 2025</div>
+              </div>
+            </div>
+
+            {/* Secondary — robes / full-length */}
+            <div class="mt-6 relative rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src={PHOTOS.pastorRobes}
+                alt="Dr. Carroll in doctoral robes at Avenue Progressive Baptist Church"
+                class="w-full object-cover"
+                style="max-height: 420px; object-position: top center;"
+                loading="lazy"
+              />
+              <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(107,26,42,0.85) 100%);"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 text-center">
+                <span class="text-brand-gold text-xs font-semibold uppercase tracking-widest">
+                  <i class="fas fa-cross mr-1 text-xs"></i> Servant of the Word
+                </span>
               </div>
             </div>
 
@@ -46,19 +67,9 @@ export const pastorPage = (c: Context) => c.render(
                 is never revoked and His love never fails.
               </p>
             </div>
-
-            {/* Congregation photo */}
-            <div class="mt-6 rounded-2xl overflow-hidden shadow-md">
-              <img
-                src={PHOTOS.congregation2}
-                alt="Avenue congregation in worship"
-                class="w-full h-48 object-cover"
-                loading="lazy"
-              />
-            </div>
           </div>
 
-          {/* Bio column */}
+          {/* ── Bio column ── */}
           <div class="lg:col-span-3 fade-in delay-2">
             <div class="section-divider left"></div>
             <h2 class="font-serif text-3xl md:text-4xl font-bold text-brand-maroon mb-6">
@@ -97,13 +108,13 @@ export const pastorPage = (c: Context) => c.render(
               </p>
             </div>
 
-            {/* Highlights */}
+            {/* Highlights grid */}
             <div class="mt-10 grid grid-cols-2 gap-4">
               {[
-                { icon: 'fa-bible', label: 'Expository Preaching', sub: 'Christ-centered messages' },
-                { icon: 'fa-users', label: 'Community Focused', sub: 'Serving South Dallas' },
-                { icon: 'fa-graduation-cap', label: '20+ Years Ministry', sub: 'Experienced shepherd' },
-                { icon: 'fa-home', label: 'Family Rooted', sub: 'Married 26 years' },
+                { icon: 'fa-bible',           label: 'Expository Preaching', sub: 'Christ-centered messages' },
+                { icon: 'fa-users',           label: 'Community Focused',    sub: 'Serving South Dallas' },
+                { icon: 'fa-graduation-cap',  label: '20+ Years Ministry',   sub: 'Experienced shepherd' },
+                { icon: 'fa-home',            label: 'Family Rooted',        sub: 'Married 26 years' },
               ].map((h, i) => (
                 <div key={i} class={`bg-white rounded-xl p-4 shadow-sm fade-in delay-${i + 1}`}>
                   <div class="flex items-center gap-3">
@@ -119,11 +130,14 @@ export const pastorPage = (c: Context) => c.render(
               ))}
             </div>
 
+            {/* CTA buttons */}
             <div class="mt-10 flex flex-wrap gap-4">
-              <a href="/visit" class="inline-flex items-center gap-2 bg-brand-maroon hover:bg-brand-maroon2 text-white font-semibold px-6 py-3 rounded-full transition-colors">
+              <a href="/visit"
+                class="inline-flex items-center gap-2 bg-brand-maroon hover:bg-brand-maroon2 text-white font-semibold px-6 py-3 rounded-full transition-colors shadow-md">
                 <i class="fas fa-church"></i> Join Us Sunday
               </a>
-              <a href="/contact" class="inline-flex items-center gap-2 border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 rounded-full transition-colors">
+              <a href="/contact"
+                class="inline-flex items-center gap-2 border-2 border-brand-maroon text-brand-maroon hover:bg-brand-maroon hover:text-white font-semibold px-6 py-3 rounded-full transition-colors">
                 Contact the Church
               </a>
             </div>
@@ -132,14 +146,43 @@ export const pastorPage = (c: Context) => c.render(
       </div>
     </section>
 
-    {/* Full-width congregation photo strip */}
-    <section class="relative h-72 overflow-hidden">
-      <img src={PHOTOS.congregation6} alt="THE AVENUE congregation" class="w-full h-full object-cover" loading="lazy" />
-      <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(107,26,42,0.75) 0%, rgba(17,17,17,0.55) 100%);"></div>
-      <div class="absolute inset-0 flex items-center justify-center">
-        <p class="font-serif text-white text-2xl md:text-3xl italic text-center px-8 drop-shadow-lg">
-          &ldquo;A pastor after God&apos;s own heart, serving a congregation full of faith.&rdquo;
-        </p>
+    {/* Full-width pastoral banner — robes photo wide crop */}
+    <section class="relative h-80 overflow-hidden">
+      <img
+        src={PHOTOS.pastorRobes}
+        alt="Dr. Mancil Carroll III serving THE AVENUE"
+        class="w-full h-full object-cover"
+        style="object-position: center 15%;"
+        loading="lazy"
+      />
+      <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(107,26,42,0.88) 0%, rgba(17,17,17,0.55) 60%, transparent 100%);"></div>
+      <div class="absolute inset-0 flex items-center px-8 md:px-20">
+        <div class="max-w-xl">
+          <p class="font-serif text-white text-2xl md:text-3xl italic leading-snug drop-shadow-lg">
+            &ldquo;A pastor after God&apos;s own heart, serving a congregation full of faith.&rdquo;
+          </p>
+          <span class="block text-brand-gold text-sm font-semibold mt-4 not-italic">
+            &mdash; Avenue Progressive Baptist Church
+          </span>
+        </div>
+      </div>
+    </section>
+
+    {/* Congregation strip */}
+    <section class="py-0">
+      <div class="grid grid-cols-3 h-52">
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.congregation6} alt="THE AVENUE congregation" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-maroon/20"></div>
+        </div>
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.worshipPraise} alt="Congregation worshipping" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-charcoal/20"></div>
+        </div>
+        <div class="relative overflow-hidden">
+          <img src={PHOTOS.installation} alt="Pastor installation service" class="w-full h-full object-cover" loading="lazy" />
+          <div class="absolute inset-0 bg-brand-maroon/20"></div>
+        </div>
       </div>
     </section>
   </div>,
