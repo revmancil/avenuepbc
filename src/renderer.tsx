@@ -1,43 +1,45 @@
 import { jsxRenderer } from 'hono/jsx-renderer'
 
-// ── Real Church Photos ─────────────────────────────────────
+// ── Real Church Photos — served as local static files ──────
+// All images live in public/static/photos/ and are served at /static/photos/*
+const P = (f: string) => `/static/photos/${f}`
+
 export const PHOTOS = {
   // Wide sanctuary — full congregation, best hero shot
-  heroSanctuary:  'https://www.genspark.ai/api/files/s/bwOHhCBV',
+  heroSanctuary:  P('heroSanctuary.jpg'),
   // Choir + congregation from front
-  worshipFull:    'https://www.genspark.ai/api/files/s/7UHqe1NX',
+  worshipFull:    P('worshipFull.jpg'),
   // Prayer over pastor (installation service)
-  installation:   'https://www.genspark.ai/api/files/s/sdjC3kvi',
+  installation:   P('installation.jpg'),
   // Congregation seated – smiling / joyful
-  congregation1:  'https://www.genspark.ai/api/files/s/mxJTUxha',
-  congregation2:  'https://www.genspark.ai/api/files/s/yv80wJlr',
-  congregation3:  'https://www.genspark.ai/api/files/s/dSWM8UR4',
-  congregation4:  'https://www.genspark.ai/api/files/s/SgUsUdw4',
-  congregation5:  'https://www.genspark.ai/api/files/s/SFBbyD4L',
-  congregation6:  'https://www.genspark.ai/api/files/s/zt3voQUo',
-  congregation7:  'https://www.genspark.ai/api/files/s/JYy7b76k',
+  congregation1:  P('congregation1.jpg'),
+  congregation2:  P('congregation2.jpg'),
+  congregation3:  P('congregation3.jpg'),
+  congregation4:  P('congregation4.jpg'),
+  congregation5:  P('congregation5.jpg'),
+  congregation6:  P('congregation6.jpg'),
+  congregation7:  P('congregation7.jpg'),
   // Friends / couples
-  couple:         'https://www.genspark.ai/api/files/s/DCqwkZ8i',
-  friendsGroup:   'https://www.genspark.ai/api/files/s/MfhunQRp',
-  womenGroup:     'https://www.genspark.ai/api/files/s/xA9k0ekP',
+  couple:         P('couple.jpg'),
+  friendsGroup:   P('friendsGroup.jpg'),
+  womenGroup:     P('womenGroup.jpg'),
   // Worship moments
-  worshipPraise:  'https://www.genspark.ai/api/files/s/TY1myRSb',
-  worshipSinger:  'https://www.genspark.ai/api/files/s/KuwX0dPF',
-  worshipPrayer:  'https://www.genspark.ai/api/files/s/qATxsf2z',
+  worshipPraise:  P('worshipPraise.jpg'),
+  worshipSinger:  P('worshipSinger.jpg'),
+  worshipPrayer:  P('worshipPrayer.jpg'),
   // Music
-  pianist1:       'https://www.genspark.ai/api/files/s/dZor1cKS',
-  pianist2:       'https://www.genspark.ai/api/files/s/eThU3yiF',
-  // Bible study
-  bibleStudy:     'https://www.genspark.ai/api/files/s/bwOHhCBV',
-  bible:          'https://www.genspark.ai/api/files/s/UnqkXDY9',
-  // Ushers
-  ushers:         'https://www.genspark.ai/api/files/s/FGuzqfBv',
-  // Hospitality greeters
-  greeters:       'https://www.genspark.ai/api/files/s/JxiMgIPW',
+  pianist1:       P('pianist1.jpg'),
+  pianist2:       P('pianist2.jpg'),
+  // Bible study / props
+  bibleStudy:     P('heroSanctuary.jpg'),  // same as hero
+  bible:          P('bible.jpg'),
+  // Ushers & greeters
+  ushers:         P('ushers.jpg'),
+  greeters:       P('greeters.jpg'),
   // Pastor Carroll — headshot (glasses, gold bowtie)
-  pastorHeadshot: 'https://www.genspark.ai/api/files/s/Q2nYiCWX',
-  // Pastor Carroll — in doctoral robes at pulpit
-  pastorRobes:    'https://www.genspark.ai/api/files/s/lS4KP1Ox',
+  pastorHeadshot: P('pastorHeadshot.jpg'),
+  // Pastor Carroll — doctoral robes at pulpit
+  pastorRobes:    P('pastorRobes.jpg'),
   // Logo
   logo:           '/static/logo.png',
 }
