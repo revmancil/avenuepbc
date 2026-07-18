@@ -37,7 +37,7 @@ const PASTORS = [
     name:  'Rev. Raymond Shaw',
     title: 'Fourth Pastor',
     years: '2014 – 2024',
-    note:  'Strengthened the congregation\u2019s roots in South Dallas over a decade of dedicated ministry and community service.',
+    note:  'Strengthened the congregation\u2019s roots in South Dallas over a decade of dedicated ministry, guiding the church faithfully through the COVID-19 pandemic.',
     current: false,
   },
   {
@@ -239,7 +239,7 @@ export const historyPage = (c: Context) => c.render(
               { year: '2011\u20132013', title: 'Rev. Elmer Rogers', side: 'left',
                 text: 'Rev. Rogers served as the third pastor, guiding the congregation through a season of prayer and transition, maintaining the spirit of worship and fellowship at THE AVENUE.' },
               { year: '2014\u20132024', title: 'Rev. Raymond Shaw', side: 'right',
-                text: 'Rev. Shaw served for a decade as fourth pastor, deepening the church\u2019s roots in South Dallas through dedicated ministry, outreach, and steadfast service to families across the community.' },
+                text: 'Rev. Shaw served for a decade as fourth pastor, deepening the church\u2019s roots in South Dallas through dedicated ministry and outreach. He faithfully guided the congregation through the challenges of the COVID-19 pandemic, keeping the church united in faith and community.' },
               { year: '2025', title: 'Dr. Mancil Carroll III', side: 'left',
                 text: 'In May 2025, Dr. Mancil Carroll III was elected Senior Pastor. Holding a Master of Divinity and Doctor of Ministry from Liberty University, Dr. Carroll leads with fresh vision and a deep love for South Dallas.' },
               { year: 'Today', title: 'Continuing the Legacy', side: 'right',
