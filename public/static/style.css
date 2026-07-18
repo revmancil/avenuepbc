@@ -1015,3 +1015,16 @@ body {
 }
 
 /* nav-desktop / mobile handled in Navbar section above */
+
+/* ── History page responsive ──────────────────────────────── */
+@media (max-width: 760px) {
+  .pastors-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .history-photos {
+    grid-template-columns: 1fr !important;
+  }
+  .timeline-line {
+    display: none !important;
+  }
+}

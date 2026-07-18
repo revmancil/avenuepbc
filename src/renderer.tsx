@@ -40,6 +40,10 @@ export const PHOTOS = {
   pastorHeadshot: P('pastorHeadshot.jpg'),
   // Pastor Carroll — doctoral robes at pulpit
   pastorRobes:    P('pastorRobes.jpg'),
+  // Historical — founding pastor portrait + original building
+  // (set to empty string until photos are uploaded)
+  foundingPastor: '',
+  oldBuilding:    '',
   // Logo
   logo:           '/static/logo.png',
 }
