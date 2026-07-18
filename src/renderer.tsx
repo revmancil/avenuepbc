@@ -41,7 +41,8 @@ export const PHOTOS = {
   // Pastor Carroll — doctoral robes at pulpit
   pastorRobes:    P('pastorRobes.jpg'),
   // Historical — five pastors + original building
-  pastor1Dickens: P('pastor1Dickens.jpg'),
+  pastor1Dickens: P('ebglenn2.jpg'),    // mosaic/brick bg portrait — pastors grid
+  ebglenn:        P('ebglenn.jpg'),     // oval/pulpit photo — shown beside old building
   pastor2Vernon:  P('pastor2Vernon.jpg'),
   pastor3Rogers:  P('pastor3Rogers.jpg'),
   pastor4Shaw:    P('pastor4Shaw.jpg'),

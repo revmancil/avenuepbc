@@ -97,7 +97,7 @@ export const historyPage = (c: Context) => c.render(
           <figure style="margin:0;">
             <div style="position:relative;overflow:hidden;background:#111;aspect-ratio:4/5;">
               <img
-                src={PHOTOS.pastor1Dickens}
+                src={PHOTOS.ebglenn}
                 alt="Dr. E. B. Glenn Dickens, Founding Pastor of Avenue Baptist Church, 1961–2000"
                 style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"
                 loading="lazy"
