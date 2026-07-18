@@ -3,12 +3,10 @@ import { PageHero } from './shared'
 import { PHOTOS } from '../renderer'
 
 const regularEvents = [
-  { day: 'Sunday', time: '10:00 AM', name: 'Sunday School', desc: 'Bible study classes for all ages.', icon: 'fa-bible' },
-  { day: 'Sunday', time: '11:15 AM', name: 'Sunday Worship Service', desc: 'Main worship service featuring praise and expository preaching.', icon: 'fa-church' },
-  { day: 'Wednesday', time: '6:30 PM', name: 'Prayer & Bible Study', desc: 'Midweek gathering for prayer, worship, and study of Scripture.', icon: 'fa-pray' },
-  { day: 'Thursday', time: '7:00 PM', name: 'Choir Rehearsal', desc: 'Music Ministry rehearsal open to all who sing or play.', icon: 'fa-music' },
-  { day: '1st Saturday', time: '8:00 AM', name: "Men's Ministry Breakfast", desc: 'Monthly fellowship, accountability, and study for men.', icon: 'fa-shield-alt' },
-  { day: '2nd Saturday', time: '10:00 AM', name: "Women's Ministry Gathering", desc: 'Monthly Bible study, fellowship, and service for women.', icon: 'fa-heart' },
+  { day: 'Sunday',    time: '10:00 AM', name: 'Sunday School',          desc: 'Bible study classes for all ages.',                                          icon: 'fa-bible'   },
+  { day: 'Sunday',    time: '11:15 AM', name: 'Sunday Worship Service', desc: 'Main worship service featuring praise and expository preaching.',             icon: 'fa-church'  },
+  { day: 'Wednesday', time: '6:30 PM',  name: 'Prayer & Bible Study',   desc: 'Midweek gathering for prayer, worship, and study of Scripture.',              icon: 'fa-pray'    },
+  { day: 'Saturday',  time: '12:30 PM', name: 'Choir Rehearsal',        desc: 'Music Ministry rehearsal open to all who sing or play.',                     icon: 'fa-music'   },
 ]
 
 export const eventsPage = (c: Context) => c.render(
