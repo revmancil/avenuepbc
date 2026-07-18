@@ -1017,7 +1017,11 @@ body {
 /* nav-desktop / mobile handled in Navbar section above */
 
 /* ── History page responsive ──────────────────────────────── */
-@media (max-width: 760px) {
+@media (max-width: 900px) {
+  .pastors-photos {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1rem !important;
+  }
   .pastors-grid {
     grid-template-columns: 1fr 1fr !important;
   }
@@ -1026,5 +1030,10 @@ body {
   }
   .timeline-line {
     display: none !important;
+  }
+}
+@media (max-width: 560px) {
+  .pastors-photos {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
