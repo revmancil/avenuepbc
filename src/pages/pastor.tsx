@@ -94,7 +94,7 @@ export const pastorPage = (c: Context) => c.render(
                 THE AVENUE. Elected in May 2025, he arrived with a proven track record of equipping
                 congregations, mentoring young leaders, and guiding families to live with purpose and faith.
                 He holds a <strong class="text-brand-maroon">Master of Divinity</strong> and a
-                <strong class="text-brand-maroon"> Doctor of Ministry</strong> from
+                <strong class="text-brand-maroon">Doctor of Ministry</strong> from{' '}
                 <strong class="text-brand-maroon">Liberty University</strong>, equipping him with deep
                 theological training in service of the local church.
               </p>
