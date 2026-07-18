@@ -93,6 +93,10 @@ export const pastorPage = (c: Context) => c.render(
                 Pastor Carroll brings over <strong class="text-brand-maroon">20 years of ministry experience</strong> to
                 THE AVENUE. Elected in May 2025, he arrived with a proven track record of equipping
                 congregations, mentoring young leaders, and guiding families to live with purpose and faith.
+                He holds a <strong class="text-brand-maroon">Master of Divinity</strong> and a
+                <strong class="text-brand-maroon"> Doctor of Ministry</strong> from
+                <strong class="text-brand-maroon">Liberty University</strong>, equipping him with deep
+                theological training in service of the local church.
               </p>
               <p>
                 He is the author of <em class="text-brand-gold font-semibold">Holy, But Not Perfect</em> &mdash; a powerful
@@ -113,7 +117,7 @@ export const pastorPage = (c: Context) => c.render(
               {[
                 { icon: 'fa-bible',           label: 'Expository Preaching', sub: 'Christ-centered messages' },
                 { icon: 'fa-users',           label: 'Community Focused',    sub: 'Serving South Dallas' },
-                { icon: 'fa-graduation-cap',  label: '20+ Years Ministry',   sub: 'Experienced shepherd' },
+                { icon: 'fa-graduation-cap',  label: 'Liberty University',    sub: 'M.Div. &amp; D.Min.' },
                 { icon: 'fa-home',            label: 'Family Rooted',        sub: 'Married 26 years' },
               ].map((h, i) => (
                 <div key={i} class={`bg-white rounded-xl p-4 shadow-sm fade-in delay-${i + 1}`}>

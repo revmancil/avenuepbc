@@ -18,9 +18,9 @@ export const homePage = (c: Context) => c.render(
       <div class="hero-content fade-in">
         <p class="eyebrow eyebrow--light" style="margin-bottom:1.5rem;">South Dallas, TX &mdash; Est. 1961</p>
         <h1 class="hero-tagline">
-          <span>Worshiping.</span>
-          <span>Witnessing.</span>
-          <span>Welcoming.</span>
+          <span>A Way of</span>
+          <span>Access to</span>
+          <span>Jesus.</span>
         </h1>
         <p class="hero-sub">
           Join us every Sunday at THE AVENUE &mdash; a Christ-centered family
@@ -60,7 +60,7 @@ export const homePage = (c: Context) => c.render(
       <div class="pastor-photo">
         <img
           src={PHOTOS.pastorHeadshot}
-          alt="Senior Pastor Dr. Marcus A. Carroll"
+          alt="Senior Pastor Dr. Mancil Carroll III"
           loading="lazy"
         />
       </div>
@@ -68,19 +68,20 @@ export const homePage = (c: Context) => c.render(
         <p class="eyebrow eyebrow--light">Leadership</p>
         <div class="title-rule"></div>
         <h2 id="pastor-heading" class="section-title section-title--white" style="margin-bottom:1.25rem;">
-          Dr. Marcus A. Carroll
+          Dr. Mancil Carroll III
         </h2>
         <p style="font-size:0.8rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c9a84c;margin-bottom:1.5rem;">
           Senior Pastor &amp; Teacher
         </p>
         <p style="color:rgba(255,255,255,0.72);font-size:1rem;line-height:1.8;margin-bottom:1.25rem;">
-          Dr. Carroll leads THE AVENUE with a passion for Scripture, community, and raising
-          up the next generation of believers. Under his leadership, our church has grown
-          in faith and service throughout South Dallas.
+          Dr. Mancil Carroll III leads THE AVENUE with a passion for Scripture, community,
+          and raising up the next generation of believers. Under his leadership, our church
+          has grown in faith and service throughout South Dallas.
         </p>
         <p style="color:rgba(255,255,255,0.72);font-size:1rem;line-height:1.8;margin-bottom:2rem;">
-          A graduate of Dallas Theological Seminary, Dr. Carroll brings depth of
-          knowledge and warmth of spirit to every Sunday message and pastoral encounter.
+          Holding a Master of Divinity and Doctor of Ministry from Liberty University,
+          Dr. Carroll brings depth of scholarship and warmth of spirit to every
+          Sunday message and pastoral encounter.
         </p>
         <a href="/about/pastor" class="btn btn-outline-white" style="align-self:flex-start;">
           Meet Our Pastor
