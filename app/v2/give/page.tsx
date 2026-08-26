@@ -211,7 +211,7 @@ export default function V2GivePage() {
                 <Reveal key={item} delay={i * 0.06}>
                   <div className="flex items-start gap-3 rounded-2xl bg-white/5 ring-1 ring-white/10 p-5 h-full">
                     <Heart size={16} className="text-gold-400 mt-0.5 flex-shrink-0" />
-                    <p className="font-sans text-sm text-white/85">{item}</p>
+                    <p className="font-sans text-sm text-white/[85%]">{item}</p>
                   </div>
                 </Reveal>
               ))}

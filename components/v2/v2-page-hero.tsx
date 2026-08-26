@@ -32,7 +32,7 @@ export default function V2PageHero({
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-maroon-950 via-maroon-950/88 to-maroon-950/62" />
+        <div className="absolute inset-0 bg-gradient-to-r from-maroon-950 via-maroon-950/[88%] to-maroon-950/[62%]" />
         <div className="absolute inset-0 bg-gradient-to-t from-maroon-950 via-maroon-950/25 to-maroon-950/70" />
       </div>
 

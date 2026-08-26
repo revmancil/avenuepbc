@@ -45,7 +45,7 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/15 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/[15%] mb-6"
           >
             <Sparkles size={14} className="text-gold-400" />
             <span className="font-sans text-xs tracking-wide text-white/90">
@@ -101,7 +101,7 @@ function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-px rounded-3xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/15 max-w-2xl"
+          className="mt-14 grid grid-cols-1 sm:grid-cols-3 gap-px rounded-3xl overflow-hidden bg-white/10 backdrop-blur-md border border-white/[15%] max-w-2xl"
         >
           {[
             { label: 'Sunday School', time: '10:00 AM' },
@@ -380,7 +380,7 @@ function Ministries() {
                     <p className="font-sans text-sm text-white/70">{m.desc}</p>
                   </div>
                 </div>
-                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/15 backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/[15%] backdrop-blur flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <ArrowUpRight size={17} className="text-white" />
                 </div>
               </Link>
@@ -411,7 +411,7 @@ function CTA() {
             className="object-cover"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-maroon-950/88" />
+          <div className="absolute inset-0 bg-maroon-950/[88%]" />
           <div className="relative px-8 py-20 md:py-28 text-center">
             <h2 className="font-serif text-4xl md:text-6xl font-bold text-white leading-[1.05] mb-5">
               Your seat is waiting

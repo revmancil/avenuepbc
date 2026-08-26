@@ -100,7 +100,7 @@ export default function V2AboutPage() {
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-maroon-950/55 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-maroon-950/[55%] to-transparent" />
                   </div>
                   <div className="p-7">
                     <h3 className="font-serif text-2xl font-bold text-maroon-900 mb-2 flex items-center justify-between">

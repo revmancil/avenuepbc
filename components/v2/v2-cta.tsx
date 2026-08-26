@@ -29,7 +29,7 @@ export default function V2CTA({
       <div className="container-width">
         <Reveal className="relative rounded-[2.5rem] overflow-hidden">
           <Image src={image} alt="Worship at THE AVENUE" fill className="object-cover" sizes="100vw" />
-          <div className="absolute inset-0 bg-maroon-950/88" />
+          <div className="absolute inset-0 bg-maroon-950/[88%]" />
           <div className="relative px-8 py-20 md:py-24 text-center">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-white leading-[1.05] mb-5">
               {title}

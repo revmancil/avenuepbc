@@ -42,7 +42,7 @@ const V2Header = () => {
         className={`mx-auto max-w-7xl transition-all duration-500 rounded-2xl border ${
           scrolled
             ? 'bg-white/80 backdrop-blur-xl border-black/5 shadow-[0_8px_40px_rgba(0,0,0,0.08)]'
-            : 'bg-white/10 backdrop-blur-md border-white/15'
+            : 'bg-white/10 backdrop-blur-md border-white/[15%]'
         }`}
       >
         <div className="flex items-center justify-between px-4 sm:px-6 h-16">
