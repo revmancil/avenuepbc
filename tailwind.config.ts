@@ -13,6 +13,19 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
         serif: ['var(--font-playfair)', 'Georgia', 'Times New Roman', 'serif'],
       },
+      // Extends the default opacity scale (0,5,10,20,25,30,40,50,60,70,75,80,90,95,100)
+      // with values this design actually uses. The plain `/NN` opacity modifier only
+      // resolves against this scale, so a color/NN using an unlisted number silently
+      // compiles to no CSS rule at all (see the "invisible text overlays" fix). Adding
+      // them here means future `/15`, `/55`, `/62`, `/85`, `/88` usages work without
+      // needing the bracket arbitrary-value syntax.
+      opacity: {
+        15: '0.15',
+        55: '0.55',
+        62: '0.62',
+        85: '0.85',
+        88: '0.88',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
