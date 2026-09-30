@@ -9,6 +9,13 @@ export const dynamic = 'force-dynamic'
 
 export async function GET(request: Request) {
   try {
+    // Only admins may manage/browse the full event set (including inactive
+    // and archived events). Unauthenticated callers only ever need the
+    // public-facing subset, so they're restricted to isActive + non-archived
+    // events regardless of what query params they pass.
+    const session = await getServerSession(authOptions)
+    const isAdmin = !!session && (session.user as any)?.role === 'admin'
+
     // Auto-archive expired events first and remove them from slider
     const now = new Date()
     await prisma.event.updateMany({
@@ -28,14 +35,21 @@ export async function GET(request: Request) {
     // Get filter from query params (default to showing only active events)
     const { searchParams } = new URL(request.url)
     const archived = searchParams.get('archived')
-    
+
     const whereClause: any = {}
-    if (archived === 'true') {
-      whereClause.archived = true
-    } else if (archived === 'false') {
+    if (isAdmin) {
+      if (archived === 'true') {
+        whereClause.archived = true
+      } else if (archived === 'false') {
+        whereClause.archived = false
+      }
+      // If archived param is not provided, admins get all events
+    } else {
+      // Public callers never see inactive or archived events, no matter
+      // what "archived" query param they send.
+      whereClause.isActive = true
       whereClause.archived = false
     }
-    // If archived param is not provided, return all events
 
     const events = await prisma.event.findMany({
       where: whereClause,
