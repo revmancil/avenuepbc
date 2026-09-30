@@ -9,8 +9,17 @@ export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
+    // This endpoint is only ever called from the authenticated admin UI
+    // (admin dashboard counts, admin staff management page) - there is no
+    // public consumer - so require admin auth like the mutation handlers
+    // below. Admins get the full roster (active + inactive) so they can
+    // manage and re-activate inactive members.
+    const session = await getServerSession(authOptions)
+    if (!session || (session.user as any)?.role !== 'admin') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const staff = await prisma.staff.findMany({
-      where: { isActive: true },
       orderBy: { order: 'asc' },
     })
     return NextResponse.json(staff)

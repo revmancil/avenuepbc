@@ -9,6 +9,15 @@ export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
+    // This endpoint is only ever called from the authenticated admin
+    // pictures management page - there is no public consumer - so require
+    // admin auth like the mutation handlers below. Admins get everything,
+    // including unpublished pictures, so they can manage drafts.
+    const session = await getServerSession(authOptions)
+    if (!session || (session.user as any)?.role !== 'admin') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
     const pictures = await prisma.picture.findMany({
       orderBy: { createdAt: 'desc' },
     })

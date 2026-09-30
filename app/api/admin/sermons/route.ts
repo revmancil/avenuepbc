@@ -9,7 +9,13 @@ export const dynamic = 'force-dynamic'
 
 export async function GET() {
   try {
+    // Only admins may see draft (unpublished) sermons. Public callers
+    // (e.g. the /watch page) only ever need published sermons.
+    const session = await getServerSession(authOptions)
+    const isAdmin = !!session && (session.user as any)?.role === 'admin'
+
     const sermons = await prisma.sermon.findMany({
+      where: isAdmin ? undefined : { isPublished: true },
       orderBy: { date: 'desc' },
     })
     return NextResponse.json(sermons)
